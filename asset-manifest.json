@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/linden/static/css/main.b5eb6acf.css",
+    "main.js": "/linden/static/js/main.9bcbcd19.js",
+    "static/js/453.13c2887f.chunk.js": "/linden/static/js/453.13c2887f.chunk.js",
+    "index.html": "/linden/index.html",
+    "main.b5eb6acf.css.map": "/linden/static/css/main.b5eb6acf.css.map",
+    "main.9bcbcd19.js.map": "/linden/static/js/main.9bcbcd19.js.map",
+    "453.13c2887f.chunk.js.map": "/linden/static/js/453.13c2887f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5eb6acf.css",
+    "static/js/main.9bcbcd19.js"
+  ]
+}
