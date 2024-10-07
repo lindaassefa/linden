@@ -8,26 +8,44 @@ import ProjectsSection from './components/ProjectsSection';
 import ContactSection from './components/ContactSection';
 import Navigation from './components/NavSection';
 import './index.css';
+import { motion } from 'framer-motion';
+
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [theme, setTheme] = useState('light');
 
   const toggleTheme = () => {
-    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
   }, [theme]);
 
+  // Smooth scroll effect when active section changes
+  useEffect(() => {
+    const section = document.getElementById(activeSection);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [activeSection]);
+
   const renderActiveSection = () => {
     switch (activeSection) {
       case 'home':
-        return <HomeSection setActiveSection={setActiveSection} />;
+        return (
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8 }}
+          >
+            <HomeSection setActiveSection={setActiveSection} />
+          </motion.div>
+        );
       case 'about':
         return <AboutSection />;
       case 'projects':
-        return <ProjectsSection />; // Make sure this matches
+        return <ProjectsSection />;
       case 'experience':
         return <ExperienceSection />;
       case 'contact':
