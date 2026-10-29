@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 
 const ContactSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here
+    // Add your form submission logic here (e.g., send data to API)
     console.log('Form submitted');
   };
 

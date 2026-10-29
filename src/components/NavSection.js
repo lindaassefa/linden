@@ -4,6 +4,14 @@ import { motion } from 'framer-motion';
 const Navigation = ({ setActiveSection, activeSection }) => {
   const sections = ['home', 'about', 'projects', 'experience', 'contact'];
 
+  const handleScrollToSection = (section) => {
+    setActiveSection(section);
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-800 shadow-md z-50">
       <div className="container mx-auto px-4 py-4">
@@ -11,7 +19,7 @@ const Navigation = ({ setActiveSection, activeSection }) => {
           {sections.map((section) => (
             <motion.li key={section}>
               <button
-                onClick={() => setActiveSection(section)}
+                onClick={() => handleScrollToSection(section)}
                 className={`px-4 py-2 rounded-full font-semibold transition-colors duration-300 ${
                   activeSection === section
                     ? 'bg-blue-400 text-white'

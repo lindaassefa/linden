@@ -6,10 +6,14 @@ const HomeSection = ({ setActiveSection }) => {
 
   const handleGetInTouch = () => {
     setActiveSection('contact');
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
-    <section className="py-24 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-sans">
+    <section id="home" className="min-h-screen pt-32 md:pt-36 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-sans flex flex-col justify-center items-center">
       <div className="container mx-auto px-4 text-center">
         <motion.h1 
           className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 tracking-tight font-heading"

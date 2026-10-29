@@ -8,7 +8,6 @@ import ProjectsSection from './components/ProjectsSection';
 import ContactSection from './components/ContactSection';
 import Navigation from './components/NavSection';
 import './index.css';
-import { motion } from 'framer-motion';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -22,7 +21,7 @@ function App() {
     document.documentElement.classList.toggle('dark', theme === 'dark');
   }, [theme]);
 
-  // Smooth scroll effect when active section changes
+  // This useEffect ensures the page scrolls to the correct section when activeSection changes
   useEffect(() => {
     const section = document.getElementById(activeSection);
     if (section) {
@@ -30,37 +29,17 @@ function App() {
     }
   }, [activeSection]);
 
-  const renderActiveSection = () => {
-    switch (activeSection) {
-      case 'home':
-        return (
-          <motion.div 
-            initial={{ opacity: 0, y: 50 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.8 }}
-          >
-            <HomeSection setActiveSection={setActiveSection} />
-          </motion.div>
-        );
-      case 'about':
-        return <AboutSection />;
-      case 'projects':
-        return <ProjectsSection />;
-      case 'experience':
-        return <ExperienceSection />;
-      case 'contact':
-        return <ContactSection />;
-      default:
-        return <HomeSection setActiveSection={setActiveSection} />;
-    }
-  };
-
   return (
-    <div className="App min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+    <div className="App min-h-screen bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white transition-colors duration-300">
       <Header theme={theme} toggleTheme={toggleTheme} />
       <Navigation setActiveSection={setActiveSection} activeSection={activeSection} />
       <main className="pt-20">
-        {renderActiveSection()}
+        {/* Render all sections, so they are always available for scrolling */}
+        <HomeSection setActiveSection={setActiveSection} />
+        <AboutSection />
+        <ProjectsSection />
+        <ExperienceSection />
+        <ContactSection /> {/* Keep this section always rendered */}
       </main>
       <Footer />
     </div>

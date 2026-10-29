@@ -30,7 +30,7 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900">
+    <section id="experience" className="min-h-screen py-20 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 flex items-center justify-center">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-12 text-center text-blue-600 dark:text-blue-300">Professional Experience</h2>
         

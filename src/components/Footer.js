@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 
 function Footer() {
   return (
-    <motion.footer 
-      className="bg-gray-800 text-white p-4" 
+    <motion.footer
+      className="bg-gray-800 text-white p-6 mt-12"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
