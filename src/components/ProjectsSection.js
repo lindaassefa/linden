@@ -8,7 +8,7 @@ const ProjectsSection = () => {
       description: "I made this so I could upload a song and pull out vocals, drums, bass, and the other instruments. I have been trying it on Ethiopian recordings. A separate krar stem is still experimental, so that download stays turned off.",
       technologies: ["Next.js", "Python", "HTDemucs"],
       image: "/snapshots/kirar-separation.png",
-      github: ""
+      github: "https://github.com/lindaassefa/kirar-separation"
     },
     {
       title: "Music Stem Separator",
